@@ -1,5 +1,8 @@
 import { Poppins } from "next/font/google";
-import "./globals.css";
+// app/layout.js
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './globals.css'; // Your custom styles
+
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 

@@ -1,33 +1,70 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 
 const Header = () => {
+  useEffect(() => {
+    import("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
+
   return (
-    <header className="flex justify-between items-center px-6 py-4 bg-[#1B1212] text-white">
-      {/* Left - Logo */}
-      <div className="flex items-center">
-        <img src="/logo.png" alt="Logo" className="h-10" />
-      </div>
-
-      {/* Center - Menu */}
-      <nav className="hidden md:flex space-x-6">
-        <a href="#home" className="hover:underline">
-          Home
-        </a>
-        <a href="#about" className="hover:underline">
-          About
-        </a>
-        <a href="#services" className="hover:underline">
-          Services
-        </a>
-      </nav>
-
-      {/* Right - Connect Button */}
-      <div>
-        <button className="bg-yellow-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded">
-          Connect
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <div className="container">
+        <a className="navbar-brand fw-bold" href="#">Navbar</a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
         </button>
+
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-3">
+            <li className="nav-item">
+              <a className="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">Link</a>
+            </li>
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul className="dropdown-menu">
+                <li><a className="dropdown-item" href="#">Action</a></li>
+                <li><a className="dropdown-item" href="#">Another action</a></li>
+                <li><hr className="dropdown-divider" /></li>
+                <li><a className="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+
+          <form className="d-flex" role="search">
+            <input
+              className="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button className="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
       </div>
-    </header>
+    </nav>
   );
 };
 
